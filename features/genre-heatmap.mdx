@@ -1,30 +1,82 @@
 ---
-title: Genre Heatmap
-description: "Visual genre opportunity analysis and saturation mapping"
+title: "Genre Heatmap — Find Underserved Roblox Niches"
+sidebarTitle: "Genre Heatmap"
+description: "Visual genre opportunity analysis showing saturation, growth, and revenue potential for every Roblox genre — find the right niche before you build."
 icon: "map"
 ---
 
-The Genre Heatmap provides a visual breakdown of every Roblox genre's health — showing saturation, growth, and opportunity at a glance.
+The Genre Heatmap provides a bird's-eye view of the entire Roblox genre landscape. See which genres are oversaturated, which are growing fast, and where the real opportunities are — all in one visual dashboard.
+
+## Why Genre Selection Matters
+
+Choosing the wrong genre is the #1 mistake new Roblox developers make. Building a simulator when the market already has 8,500 of them means you're competing with established titles for a finite pool of players. But building in an underserved genre with growing demand? That's how breakout games happen.
+
+The Genre Heatmap turns this decision from guesswork into data.
 
 ## How It Works
 
-The **Genre Opportunity Engine** scores each genre using rule-based analysis of:
-- Number of active games in the genre
-- Average and median CCU across genre games
-- Genre growth rate (week-over-week)
-- Revenue potential based on gamepass data
-- Competition density (saturation)
+The **Genre Opportunity Engine** analyzes every genre across five dimensions:
 
-## Features
+| Dimension | What It Measures | Why It Matters |
+|-----------|-----------------|--------|
+| Game count | How many active games exist in this genre | Competition level |
+| Average CCU | How many players the genre attracts | Market demand |
+| Growth rate | Week-over-week change in genre CCU | Momentum |
+| Revenue potential | Average gamepass revenue per game | Monetization opportunity |
+| Saturation score | Ratio of games to players | How crowded the genre is |
 
-- **Heatmap view**: Color-coded grid showing opportunity scores by genre
-- **Detailed breakdowns**: Click any genre for game count, avg CCU, top performers, and growth trends
-- **Opportunity scores**: 0–1 scale combining growth potential with competition levels
+These combine into a single **opportunity score** (0–1) for each genre.
+
+## Reading the Heatmap
+
+<AccordionGroup>
+  <Accordion title="High score (0.7–1.0) — Green zone">
+    Strong demand, low competition. These genres have growing player bases but relatively few games competing. Ideal for new developers or studios looking to enter a fresh market.
+  </Accordion>
+  <Accordion title="Medium score (0.4–0.7) — Yellow zone">
+    Moderate opportunity. Either the genre is growing but competitive, or it's less competitive but also lower demand. Can still be profitable with strong execution and differentiation.
+  </Accordion>
+  <Accordion title="Low score (0–0.4) — Red zone">
+    Oversaturated or declining. Too many games fighting for too few players, or the genre is shrinking. Not impossible to succeed, but you'll need a genuinely unique angle.
+  </Accordion>
+</AccordionGroup>
+
+## Use Cases
+
+<AccordionGroup>
+  <Accordion title="First-time developer choosing a genre">
+    Open the heatmap and sort by opportunity score. Pick a green-zone genre that matches your skills. You'll have a much better chance of getting noticed than jumping into a saturated market.
+  </Accordion>
+  <Accordion title="Studio diversifying its portfolio">
+    If all your games are simulators, check the heatmap for adjacent genres with higher opportunity scores. Expanding into a growing genre reduces your portfolio risk.
+  </Accordion>
+  <Accordion title="Validating a game concept">
+    Before spending weeks building, check if your target genre is green or red. A red-zone genre doesn't mean "don't build" — it means you need a stronger unique selling point.
+  </Accordion>
+</AccordionGroup>
+
+## Detailed Genre Breakdowns
+
+Click any genre on the heatmap to see:
+- **Top 10 games** in the genre by CCU
+- **Growth chart** showing genre CCU over the past 30 days
+- **Revenue data** including average gamepass count and pricing
+- **Competitor density** — how many new games entered the genre this month
+
+## Tips
+
+<Tip>
+  The highest opportunity isn't always the best choice for *you*. A genre with a 0.6 score that matches your skills will outperform a 0.9 genre you have no experience with. Use the heatmap as one input, not the only input.
+</Tip>
+
+<Tip>
+  Check the heatmap monthly. Genre dynamics shift — a green-zone genre can become yellow within weeks if multiple developers jump in simultaneously.
+</Tip>
 
 ## Plan Limits
 
 | Plan | Access Level |
 |------|:-:|
-| Explorer | Heatmap only |
-| Builder | Full genre insights |
-| Studio | Full genre insights |
+| Explorer | Heatmap only (visual overview) |
+| Builder | Full genre insights + breakdowns |
+| Studio | Full genre insights + breakdowns |

@@ -1,30 +1,66 @@
 ---
-title: Revenue Simulator
-description: "Estimate potential revenue based on game metrics"
+title: "Revenue Simulator — Estimate Roblox Game Earnings"
+sidebarTitle: "Revenue Simulator"
+description: "Estimate potential Roblox game revenue using ML-powered projections based on CCU, gamepasses, genre benchmarks, and real monetization data."
 icon: "calculator"
 ---
 
-The Revenue Simulator helps you estimate how much a Roblox game could earn based on its player engagement and monetization setup.
+The Revenue Simulator helps you estimate how much a Roblox game could earn based on its player engagement and monetization setup. Powered by a Gradient Boosting model trained on real gamepass and engagement data.
+
+## Why Use the Revenue Simulator?
+
+Most Roblox developers have no idea how much revenue their game *should* be generating. Is your conversion rate good or terrible? Are your gamepass prices too high or leaving money on the table? The Revenue Simulator answers these questions by comparing your metrics against real data from thousands of games.
 
 ## How It Works
 
-The simulator uses a **Gradient Boosting model** trained on real gamepass and engagement data. Input your expected metrics and get revenue projections.
+The simulator uses a **Gradient Boosting regression model** trained on real-world Roblox game data. It considers:
+- Your game's CCU and engagement metrics
+- Number and pricing of gamepasses
+- Genre-specific conversion rates (simulators monetize differently than horror games)
+- Player engagement depth (higher engagement = higher willingness to spend)
 
 ## Inputs
 
-| Parameter | Description |
-|-----------|-------------|
-| Average CCU | Expected concurrent players |
-| Gamepass count | Number of gamepasses offered |
-| Average gamepass price | Mean price across all passes |
-| Genre | Game genre (affects conversion rates) |
-| Engagement score | Player retention/engagement estimate |
+| Parameter | Description | Example |
+|-----------|-------------|---------|
+| Average CCU | Expected concurrent players | 5,000 |
+| Gamepass count | Number of gamepasses offered | 5 |
+| Average gamepass price | Mean Robux price across all passes | 250 |
+| Genre | Game genre (affects conversion rates) | Simulator |
+| Engagement score | Player retention/engagement estimate | 0.7 |
 
 ## Output
 
-- **Monthly revenue estimate** with confidence range
+- **Monthly revenue estimate** with confidence range (low/mid/high)
 - **Revenue breakdown** by gamepass tier
 - **Comparison** against genre average revenue
+- **Optimization suggestions** — e.g., "Adding a premium gamepass at 1,000 Robux could increase revenue by 20%"
+
+## Use Cases
+
+<AccordionGroup>
+  <Accordion title="Pre-launch revenue planning">
+    Before building, estimate potential earnings to decide if the project is worth the investment. Input your expected metrics and see if the projected revenue justifies the development time.
+  </Accordion>
+  <Accordion title="Gamepass pricing optimization">
+    Run multiple simulations with different gamepass counts and prices. Find the configuration that maximizes estimated revenue. Often, adding one more gamepass at a higher tier significantly boosts the projection.
+  </Accordion>
+  <Accordion title="Investor or stakeholder reporting">
+    Generate data-backed revenue projections to include in pitches or reports. The ML model provides more credible estimates than guesswork.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  Run the simulator with your *current* metrics first to see if the estimate matches your actual revenue. If it's close, you can trust the model's projections for hypothetical scenarios.
+</Tip>
+
+## API Endpoint
+
+```
+POST /api/revenue-simulator
+```
+
+See [API Reference → Revenue Simulator](/api-reference/revenue-simulator) for full details.
 
 ## Plan Limits
 

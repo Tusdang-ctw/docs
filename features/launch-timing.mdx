@@ -1,24 +1,67 @@
 ---
-title: Launch Timing
-description: "Data-driven launch window recommendations"
+title: "Launch Timing — When to Release Your Roblox Game"
+sidebarTitle: "Launch Timing"
+description: "Data-driven launch window recommendations based on seasonal events, genre trends, and historical CCU patterns to maximize your game's first-week performance."
 icon: "calendar"
 ---
 
-Launch Timing helps you pick the optimal release window for your Roblox game based on seasonal events, genre trends, and historical CCU patterns.
+Launch Timing helps you pick the optimal release window for your Roblox game. Launching at the right time can mean 2-3x more players in your critical first week — when Roblox's algorithm is deciding whether to boost your game.
+
+## Why Launch Timing Matters
+
+Roblox's discovery algorithm heavily weights a game's early performance. If your game gets strong CCU in its first 48 hours, it's more likely to appear on the Discover page, which creates a virtuous cycle of more players, more visibility, and more players.
+
+Launching during the wrong week — say, right when a massive seasonal event ends and players leave the platform — can doom an otherwise great game to obscurity.
 
 ## How It Works
 
-The engine combines:
-- **Seasonal event calendar** (9 events: Halloween, Winter Holiday, Summer Break, etc.)
-- **Historical CCU patterns** by genre and time period
-- **Domain knowledge** about Roblox player behavior
+The engine combines three data sources to generate recommendations:
+
+1. **Seasonal event calendar** — 9 major Roblox events tracked (Halloween, Winter Holiday, Summer Break, Spring Break, Easter, Back to School, Thanksgiving, Valentine's Day, and Anniversary events)
+2. **Historical CCU patterns** — genre-specific player activity data showing when each genre peaks and dips throughout the year
+3. **Domain knowledge** — rules about player behavior (e.g., younger players are more active during school breaks, horror games spike around Halloween)
+
+## Seasonal Events
+
+| Event | Peak Period | Best For |
+|-------|-----------|----------|
+| Summer Break | Jun 1 – Aug 15 | All genres (highest overall CCU) |
+| Halloween | Oct 1 – Oct 31 | Horror, Spooky, Mystery |
+| Winter Holiday | Dec 15 – Jan 5 | All genres (gift card spending spike) |
+| Spring Break | Mar 10 – Mar 25 | Social, Roleplay, Casual |
+| Back to School | Aug 20 – Sep 10 | Avoid launching (CCU drops) |
+
+## Use Cases
+
+<AccordionGroup>
+  <Accordion title="Horror game developer">
+    Launch timing will recommend October 1-15 as your optimal window — early enough to catch the Halloween hype wave but before the market gets saturated with seasonal horror games. Avoid November entirely.
+  </Accordion>
+  <Accordion title="Simulator developer">
+    Simulators perform consistently year-round but peak during school breaks. Launch Timing would recommend early June (Summer Break start) or late December (Winter Holiday + gift card influx).
+  </Accordion>
+  <Accordion title="Planning a major update">
+    Not just for launches — use timing data to schedule your biggest content updates during peak periods for your genre. A major update during a CCU peak gets more eyeballs and better retention.
+  </Accordion>
+</AccordionGroup>
 
 ## Output
 
 For each game theme/genre, you receive:
-- **Recommended launch windows** ranked by opportunity score
-- **Events to target** (e.g., "Horror games peak 2 weeks before Halloween")
-- **Windows to avoid** (high competition periods)
+- **Ranked launch windows** with opportunity scores (0–1)
+- **Events to target** with explanations (e.g., "Horror CCU peaks 200-300% during Halloween season")
+- **Windows to avoid** with reasons (e.g., "Back to School week — platform CCU drops 25%")
+- **Genre-specific patterns** showing weekly and monthly player behavior
+
+## Tips
+
+<Tip>
+  Don't just launch during peak CCU — launch 1-2 weeks *before* the peak. This gives your game time to build momentum and get picked up by the algorithm right as player numbers surge.
+</Tip>
+
+<Tip>
+  Combine Launch Timing with Genre Heatmap data. If your genre is low-competition AND you time the launch perfectly, you'll have the maximum chance of breaking out.
+</Tip>
 
 ## Plan Limits
 

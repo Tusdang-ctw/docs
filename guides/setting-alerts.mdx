@@ -1,36 +1,88 @@
 ---
-title: Setting Alerts
-description: "Configure notifications for game events and market changes"
+title: "How to Set Up Roblox Game Alerts and Notifications"
+sidebarTitle: "Setting Alerts"
+description: "Configure real-time notifications for CCU spikes, trend changes, and competitor movements on your tracked Roblox games."
 icon: "bell"
 ---
 
-Alerts notify you when important events happen — CCU spikes, trend changes, or competitor movements.
+Alerts notify you when important events happen to your tracked games — CCU spikes, trend changes, or competitor movements. Never miss a critical moment again.
 
 ## Creating an Alert
 
-1. Navigate to the **Alerts** page from the sidebar
-2. Click **New Alert**
-3. Select the game, alert type, and threshold
-4. Save — you'll see alerts in your dashboard feed
+<Steps>
+  <Step title="Navigate to Alerts">
+    Open the **Alerts** page from the sidebar navigation.
+  </Step>
+  <Step title="Click New Alert">
+    Click the **New Alert** button to open the alert creation form.
+  </Step>
+  <Step title="Configure the alert">
+    Select the tracked game, choose an alert type, and set your threshold value. For example: "Alert me when Blox Fruits CCU exceeds 500,000."
+  </Step>
+  <Step title="Save">
+    Click Save. The alert is now active and will be checked every 15 minutes by the background worker.
+  </Step>
+</Steps>
 
 ## Alert Types
 
-| Type | Description |
-|------|-------------|
-| CCU Spike | Triggers when a game's CCU exceeds your threshold |
-| Trend Change | Triggers when a game's trend direction changes (up → down or vice versa) |
-| Competitor | Triggers when a competing game in your genre makes a significant move |
+| Type | What It Does | Example |
+|------|-------------|---------|
+| CCU Spike | Triggers when a game's CCU exceeds your threshold | "Notify me when my game hits 10,000 CCU" |
+| Trend Change | Triggers when a game's trend direction reverses | "Alert me if Blox Fruits starts declining" |
+| Competitor | Triggers when a competing game in your genre makes a big move | "Watch for any RPG game that jumps 50% CCU" |
+
+## When to Use Each Alert Type
+
+<AccordionGroup>
+  <Accordion title="CCU Spike — milestone tracking">
+    Set CCU alerts at key milestones for your own games: 1,000 CCU, 5,000 CCU, 10,000 CCU. Each milestone means different things for discoverability and revenue. Also useful for competitor monitoring — "alert me if Game X breaks 100K."
+  </Accordion>
+  <Accordion title="Trend Change — catching reversals">
+    The most strategic alert type. If a competitor that's been growing steadily suddenly starts declining, that's a window of opportunity. Conversely, if your own game's trend reverses downward, you want to know immediately — not a week later.
+  </Accordion>
+  <Accordion title="Competitor — genre awareness">
+    Cast a wider net. Instead of tracking individual games, monitor an entire genre for significant movements. Great for staying aware of new entrants that could disrupt your market.
+  </Accordion>
+</AccordionGroup>
 
 ## Managing Alerts
 
-- View all alerts at `/alerts` or via `GET /api/alerts/my`
-- Mark alerts as viewed by clicking them
-- Delete alerts you no longer need
+- **View all alerts**: Visit the Alerts page or call `GET /api/alerts/my`
+- **Mark as read**: Click an alert to mark it as viewed
+- **Delete**: Remove alerts you no longer need to reduce noise
+- **Review history**: See past triggered alerts to understand patterns
 
 ## Email Alerts
 
-Email notifications are available on **Builder** and **Studio** plans. When enabled, you'll receive an email in addition to the in-dashboard notification.
+Email notifications are available on **Builder** and **Studio** plans. When enabled, you receive an email in addition to the in-dashboard notification — so you're informed even when you're not logged in.
 
 <Note>
-  Alerts are processed every 15 minutes by the background worker.
+  Alerts are processed every 15 minutes by the background Celery worker. This means there can be up to a 15-minute delay between a threshold being crossed and the alert firing.
 </Note>
+
+## Tips
+
+<Tip>
+  Start with fewer, high-value alerts. 3 well-configured alerts are better than 20 noisy ones. Focus on thresholds that actually require action from you.
+</Tip>
+
+<Tip>
+  Set CCU alerts at *actionable* thresholds, not vanity milestones. "Alert me at 5,000 CCU so I can enable the monetization update" is more useful than "alert me at every 1,000 increment."
+</Tip>
+
+## Via API
+
+```bash
+# Create an alert
+curl -X POST https://rolearn.dev/api/alerts \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"alert_type": "ccu_spike", "universe_id": 2753915549, "threshold": 500000}'
+
+# Get your alerts
+curl https://rolearn.dev/api/alerts/my \
+  -H "Authorization: Bearer YOUR_TOKEN"
+```
+
+See [API Reference → Create Alert](/api-reference/create-alert) and [Get Alerts](/api-reference/get-alerts) for full details.

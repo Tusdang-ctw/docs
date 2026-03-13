@@ -146,10 +146,22 @@
       "vscode"
     ]
   },
+  "metadata": {
+    "og:site_name": "RoLearn Docs",
+    "og:type": "website",
+    "og:locale": "en_US",
+    "og:image": "https://rolearn.dev/180x180.png",
+    "twitter:card": "summary",
+    "twitter:site": "@MrAshDang"
+  },
+  "seo": {
+    "indexHiddenPages": false
+  },
   "footer": {
     "socials": {
       "discord": "https://discord.gg/rolearn",
-      "github": "https://github.com/Tusdang-ctw"
+      "github": "https://github.com/Tusdang-ctw",
+      "x": "https://x.com/MrAshDang"
     }
   }
 }

@@ -1,31 +1,55 @@
 ---
-title: Game Benchmarking
-description: "Compare your game against genre averages and top performers"
+title: "Game Benchmarking — Compare Your Roblox Game to Competitors"
+sidebarTitle: "Game Benchmarking"
+description: "Benchmark your Roblox game's CCU, engagement, and monetization metrics against genre averages and top performers to identify strengths and gaps."
 icon: "scale-balanced"
 ---
 
-Game Benchmarking lets you compare any Roblox game's metrics against genre averages and top performers in the same category.
+Game Benchmarking lets you compare any Roblox game's metrics against genre averages and top performers in the same category. See exactly where your game excels and where it falls behind — with percentile rankings across every key metric.
 
-## How It Works
+## Why Benchmark?
 
-Submit a game's Place ID to receive a benchmark report comparing it across multiple dimensions.
+Raw numbers mean nothing without context. 5,000 CCU sounds good — but is it good *for your genre*? If the average RPG has 8,000 CCU, you're underperforming. If the average horror game has 2,000, you're crushing it.
+
+Benchmarking gives you context. It turns "we have 5,000 CCU" into "we're in the 72nd percentile for our genre."
 
 ## Metrics Compared
 
-| Metric | Description |
+| Metric | What It Tells You |
 |--------|-------------|
-| CCU | Current concurrent users vs. genre average |
-| Visits | Total visits vs. genre median |
-| Like ratio | Likes-to-visits ratio vs. genre benchmark |
-| Favorite ratio | Favorites-to-visits ratio |
-| Gamepass count | Number of passes vs. genre average |
-| Gamepass pricing | Average price vs. genre range |
+| CCU | Where your player count sits vs. genre average |
+| Visits | Total lifetime traffic vs. genre median |
+| Like ratio | Player satisfaction (likes-to-visits) vs. genre norm |
+| Favorite ratio | Player commitment (favorites-to-visits) vs. genre |
+| Gamepass count | Are you offering enough monetization options? |
+| Gamepass pricing | Are your prices in line with what the genre supports? |
 
 ## Output
 
-- **Percentile rankings** for each metric within the genre
-- **Score card** with color-coded performance indicators (green/amber/red)
-- **Recommendations** based on identified gaps
+- **Percentile rankings** for each metric — "Your CCU is in the 72nd percentile for RPG games"
+- **Score card** with color-coded indicators:
+  - Green (0.7+): Strong performance
+  - Amber (0.4–0.7): Average, room for improvement
+  - Red (below 0.4): Underperforming, needs attention
+- **Gap analysis** highlighting your biggest weaknesses relative to genre leaders
+
+## Use Cases
+
+<AccordionGroup>
+  <Accordion title="Identifying your game's weakest metric">
+    Run a benchmark and look for red-zone metrics. If your like ratio is in the 20th percentile but CCU is in the 60th, player satisfaction is your bottleneck — fix gameplay quality before spending on growth.
+  </Accordion>
+  <Accordion title="Pricing your gamepasses correctly">
+    If benchmarking shows your average gamepass price is in the 90th percentile for your genre, you might be pricing out potential buyers. Conversely, if you're in the 10th percentile, you might be leaving money on the table.
+  </Accordion>
+  <Accordion title="Pitching your game to sponsors or investors">
+    "We're in the top 15% of horror games by engagement" is more compelling than "we have a 4.2% like ratio." Benchmarking data gives you the language to sell your game's performance.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  Benchmark against the right genre. A tycoon game benchmarked against "all games" will look average, but against "tycoon" specifically, it might be a top performer. Genre context matters.
+</Tip>
 
 ## API Endpoint
 
@@ -34,3 +58,11 @@ POST /api/benchmark
 ```
 
 See [API Reference → Benchmark](/api-reference/benchmark) for full details.
+
+## Plan Limits
+
+| Plan | Access |
+|------|:-:|
+| Explorer | Basic score |
+| Builder | Full benchmarking |
+| Studio | Full benchmarking |

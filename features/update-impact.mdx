@@ -1,29 +1,67 @@
 ---
-title: Update Impact
-description: "Track how game updates affect player counts and engagement"
+title: "Update Impact — Measure How Game Updates Affect Player Counts"
+sidebarTitle: "Update Impact"
+description: "Log your Roblox game updates and automatically measure their effect on CCU with before/after comparison and AI-powered analysis."
 icon: "arrow-trend-up"
 ---
 
-Update Impact lets you log game updates and automatically measures their effect on CCU, with AI-powered analysis of what worked.
+Update Impact lets you log game updates and automatically measures their effect on player counts. See exactly how much CCU changed after each update, with AI-powered analysis explaining *why* the update helped or hurt.
+
+## Why Track Update Impact?
+
+Most Roblox developers push updates and hope for the best. They might check CCU the next day, but without a systematic before/after comparison, it's impossible to know what's working.
+
+Update Impact turns every update into a learning opportunity. Over time, you build a data-backed understanding of what types of changes grow your player base.
 
 ## How It Works
 
-1. Log an update with its date, title, and categories (e.g., "New map", "Bug fixes")
-2. RoLearn compares pre-update and post-update CCU averages
-3. Calculates delta percentage and verdict (positive/negative/neutral)
-4. AI generates a summary of the update's likely impact
+1. **Log an update** with its date, title, and categories (e.g., "New map", "Bug fixes", "Balance changes")
+2. **RoLearn measures** pre-update and post-update CCU averages (typically 3-day windows)
+3. **Delta calculation** shows the percentage change in CCU after the update
+4. **AI verdict** explains the likely cause of the change based on the update type and historical patterns
 
-## Features
+## Update Categories
 
-- **Before/after CCU comparison** with percentage change
-- **AI-powered verdict** explaining why the update helped or hurt
-- **Update history** for each tracked game
-- **Stats aggregation** showing which update categories perform best
+| Category | Examples |
+|----------|---------|
+| New content | Maps, items, quests, game modes |
+| Bug fixes | Crash fixes, exploit patches, UI fixes |
+| Balance changes | Difficulty tweaks, economy adjustments |
+| Social features | Trading, chat, party system |
+| Monetization | New gamepasses, pricing changes |
+| Performance | Load time improvements, lag reduction |
+| Events | Seasonal events, limited-time content |
+
+## Use Cases
+
+<AccordionGroup>
+  <Accordion title="Finding your most effective update type">
+    After logging 10+ updates, check the stats aggregation. You might discover that "New content" updates average +15% CCU while "Balance changes" average -3%. This tells you where to invest your development time.
+  </Accordion>
+  <Accordion title="A/B testing update strategies">
+    Push a bug fix update one week and a content update the next. Compare the CCU deltas to see which type of update your player base responds to more strongly.
+  </Accordion>
+  <Accordion title="Catching negative impacts early">
+    Sometimes updates backfire — a balance change makes the game too hard, or a new feature introduces bugs. Update Impact's before/after comparison catches these drops immediately so you can hotfix.
+  </Accordion>
+</AccordionGroup>
+
+## AI Analysis (Studio Plan)
+
+On the Studio plan, each update gets an AI-generated summary that considers:
+- The update categories you selected
+- The magnitude and direction of the CCU change
+- Historical patterns from similar updates
+- Genre-specific context (some genres respond differently to certain update types)
+
+<Tip>
+  Log *every* update, even small ones. The more data points you have, the more accurate your aggregate stats become. A "minor bug fix" that causes a 10% CCU drop is valuable information.
+</Tip>
 
 ## Plan Limits
 
 | Plan | Access |
 |------|:-:|
 | Explorer | — |
-| Builder | Basic (log + view) |
-| Studio | Full + AI summaries |
+| Builder | Basic (log + view before/after) |
+| Studio | Full + AI summaries + aggregate stats |

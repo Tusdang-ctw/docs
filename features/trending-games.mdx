@@ -1,10 +1,11 @@
 ---
-title: Trending Games
-description: "Real-time trending rankings updated every 5 minutes"
+title: "Trending Games — Real-Time Roblox Rankings by CCU"
+sidebarTitle: "Trending Games"
+description: "Real-time trending Roblox game rankings updated every 5 minutes, with CCU charts, genre filters, and breakout detection across 50,000+ tracked games."
 icon: "fire"
 ---
 
-The Trending Games page surfaces the most popular Roblox games ranked by current concurrent users (CCU), updated every 5 minutes.
+The Trending Games page surfaces the most popular Roblox games ranked by current concurrent users (CCU), updated every 5 minutes. Track what's hot right now, spot emerging hits, and understand market momentum across 50,000+ games.
 
 ## How It Works
 
@@ -12,24 +13,51 @@ RoLearn ingests CCU data from the Roblox API in two tiers:
 - **Tier 1**: Top 300 games by CCU — updated every 5 minutes
 - **Tier 2**: 800 rotating games — full cycle every ~5 hours
 
-Each game receives a **trend score** (0–1) based on its normalized CCU rank across all tracked games.
+Each game receives a **trend score** (0–1) based on its normalized CCU rank across all tracked games. A score of 0.95 means the game is in the top 5% by concurrent players.
 
 ## Features
 
 <CardGroup cols={2}>
   <Card title="Time Periods" icon="clock">
-    Filter by 1h, 6h, 24h, 7d, or 30d windows to see what's trending now vs. what's been growing steadily.
+    Filter by 1h, 6h, 24h, 7d, or 30d windows to see what's trending now vs. what's been growing steadily over weeks.
   </Card>
   <Card title="Genre Filters" icon="filter">
-    Narrow results to specific genres like Simulator, RPG, Tycoon, Horror, and more.
+    Narrow results to specific genres like Simulator, RPG, Tycoon, Horror, Fighting, Social, and more.
   </Card>
   <Card title="CCU Charts" icon="chart-line">
-    Inline sparkline charts show CCU trajectory at a glance.
+    Inline sparkline charts show each game's CCU trajectory at a glance. Spot uptrends and downtrends without clicking into individual games.
   </Card>
   <Card title="Breakout Radar" icon="radar">
-    Separate view that weights visits (70%) and likes (30%) to find games gaining momentum beyond just CCU.
+    A separate view that weights visits (70%) and likes (30%) to find games gaining momentum beyond just CCU — catching viral hits early.
   </Card>
 </CardGroup>
+
+## Use Cases
+
+<AccordionGroup>
+  <Accordion title="Market research before building">
+    Before starting a new project, spend 10 minutes on the Trending page. Filter by your target genre, switch between 24h and 7d views, and study what types of games are gaining players. This tells you what the market wants *right now*.
+  </Accordion>
+  <Accordion title="Competitive intelligence">
+    Track your direct competitors. If a rival game's CCU spikes, you can investigate what they did — was it an update, a promotion, or an influencer? The 1h view shows you changes as they happen.
+  </Accordion>
+  <Accordion title="Content timing">
+    The 30d view reveals weekly patterns. Most Roblox games see CCU peak on weekends and dip mid-week. Use this data to time your content updates for maximum impact.
+  </Accordion>
+</AccordionGroup>
+
+## Trending vs. Breakout Radar
+
+| Feature | Trending | Breakout Radar |
+|---------|----------|----------------|
+| Ranking by | Current CCU | Weighted score (visits 70% + likes 30%) |
+| Best for | What's popular now | What's gaining momentum |
+| Updates | Every 5 minutes | Every 5 minutes |
+| Catches | Established hits | Rising games before they peak |
+
+<Tip>
+  Use both views together. A game that appears on Breakout Radar but isn't yet on Trending is likely about to explode — these are the early signals that matter most.
+</Tip>
 
 ## API Endpoint
 

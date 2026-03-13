@@ -1,24 +1,65 @@
 ---
-title: CCU Forecasting
-description: "ML-powered player count predictions using Prophet"
+title: "CCU Forecasting — Predict Roblox Player Counts with ML"
+sidebarTitle: "CCU Forecasting"
+description: "ML-powered concurrent user predictions using Meta's Prophet time-series model, with 7-30 day forecasts and confidence intervals for any tracked Roblox game."
 icon: "chart-line"
 ---
 
-CCU Forecasting uses Meta's **Prophet** time-series model to predict future player counts for any tracked game.
+CCU Forecasting uses Meta's **Prophet** time-series model to predict future player counts for any tracked game. See where your game's CCU is heading over the next 7–30 days, with confidence intervals showing the range of likely outcomes.
+
+## Why Forecast CCU?
+
+Knowing where your player count is heading lets you make better decisions:
+- **Planning updates**: If CCU is forecasted to dip, schedule a content update to counter it
+- **Resource allocation**: If a game is projected to grow, prepare your infrastructure and moderation
+- **Trend validation**: Confirm whether a recent spike is sustainable or a one-time event
 
 ## How It Works
 
-1. Historical CCU data is collected every 5 minutes
-2. Data is aggregated into daily or hourly buckets
-3. Prophet model is trained daily (4 AM) on the aggregated data
-4. Forecasts project 7–30 days into the future with confidence intervals
+1. **Data collection**: Historical CCU data is captured every 5 minutes for all tracked games
+2. **Aggregation**: Intra-day data is bucketed into daily averages (for 3+ days of history) or hourly (for shorter periods)
+3. **Model training**: Prophet models are retrained daily at 4 AM UTC on the latest aggregated data
+4. **Forecast generation**: Models project 7–30 days into the future with upper and lower confidence bounds
+
+Prophet excels at time-series forecasting because it automatically handles:
+- **Weekly seasonality** — weekday vs. weekend patterns
+- **Holiday effects** — spikes during school breaks and seasonal events
+- **Trend changes** — detecting when a game shifts from growing to declining
 
 ## Features
 
-- **Point forecasts**: Expected CCU for each future day
-- **Confidence intervals**: Upper and lower bounds showing prediction uncertainty
-- **Trend decomposition**: See seasonal patterns (weekday vs. weekend, holidays)
-- **Multiple horizons**: Short-term (7d) and long-term (30d) projections
+<CardGroup cols={2}>
+  <Card title="Point Forecasts" icon="bullseye">
+    Expected CCU for each future day — the model's best single estimate of where player counts will land.
+  </Card>
+  <Card title="Confidence Intervals" icon="arrows-left-right">
+    Upper and lower bounds showing prediction uncertainty. Wider intervals = less certainty.
+  </Card>
+  <Card title="Trend Decomposition" icon="chart-mixed">
+    See the individual components: overall trend, weekly pattern, and seasonal effects. Understand *why* the forecast looks the way it does.
+  </Card>
+  <Card title="Multiple Horizons" icon="calendar-days">
+    Short-term (7-day) forecasts for tactical decisions and long-term (30-day) forecasts for strategic planning.
+  </Card>
+</CardGroup>
+
+## Use Cases
+
+<AccordionGroup>
+  <Accordion title="Deciding when to push an update">
+    Check the 7-day forecast. If CCU is projected to dip mid-week, that's your window — push the update right before the dip to counteract it and potentially create a new uptrend.
+  </Accordion>
+  <Accordion title="Evaluating a game's trajectory">
+    If you're considering acquiring or investing in a game, the 30-day forecast tells you whether current momentum is sustainable. A game with 10K CCU but a declining forecast is very different from one with 10K and growing.
+  </Accordion>
+  <Accordion title="Detecting the end of a viral spike">
+    After a game goes viral (streamer coverage, TikTok, etc.), the forecast helps you see when CCU will normalize. This prevents over-investing in infrastructure for a temporary spike.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  Forecasts are most accurate for games with 30+ days of tracking history. Recently tracked games have less data for the model to learn from, so expect wider confidence intervals.
+</Tip>
 
 ## API Endpoint
 
@@ -34,4 +75,4 @@ See [API Reference → Forecast](/api-reference/game-forecast) for full details.
 |------|:-:|
 | Explorer | — |
 | Builder | Basic (7-day) |
-| Studio | Advanced (30-day + confidence) |
+| Studio | Advanced (30-day + confidence intervals) |
