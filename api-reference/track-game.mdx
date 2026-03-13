@@ -1,0 +1,29 @@
+---
+title: Track Game
+api: "POST /api/track/{universe_id}"
+description: "Add a game to your tracked games list"
+---
+
+<ParamField path="universe_id" type="integer" required>
+  The Roblox Universe ID of the game to track
+</ParamField>
+
+Requires authentication. The number of games you can track depends on your plan (Explorer: 3, Builder: 15, Studio: 50).
+
+<RequestExample>
+```bash
+curl -X POST https://rolearn.dev/api/track/2753915549 \
+  -H "Authorization: Bearer YOUR_TOKEN"
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "status": "tracked",
+  "universe_id": 2753915549,
+  "tracked_count": 4,
+  "limit": 15
+}
+```
+</ResponseExample>

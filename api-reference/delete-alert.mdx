@@ -1,0 +1,24 @@
+---
+title: Delete Alert
+api: "DELETE /api/alerts/{alert_id}"
+description: "Delete a specific alert"
+---
+
+<ParamField path="alert_id" type="integer" required>
+  The ID of the alert to delete
+</ParamField>
+
+<RequestExample>
+```bash
+curl -X DELETE https://rolearn.dev/api/alerts/42 \
+  -H "Authorization: Bearer YOUR_TOKEN"
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "status": "deleted"
+}
+```
+</ResponseExample>

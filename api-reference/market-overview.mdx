@@ -1,0 +1,27 @@
+---
+title: Market Overview
+api: "GET /api/market-overview"
+description: "Get high-level Roblox market statistics"
+---
+
+Returns aggregate market data including total tracked games, total CCU across all games, and genre distribution.
+
+<RequestExample>
+```bash
+curl https://rolearn.dev/api/market-overview
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "total_games": 51000,
+  "total_ccu": 5200000,
+  "top_genres": [
+    {"name": "Simulator", "games": 8500, "avg_ccu": 1200},
+    {"name": "RPG", "games": 6200, "avg_ccu": 980}
+  ],
+  "last_updated": "2026-03-13T03:00:00Z"
+}
+```
+</ResponseExample>

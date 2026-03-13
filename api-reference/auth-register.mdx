@@ -1,0 +1,30 @@
+---
+title: Register
+api: "POST /api/auth/register"
+description: "Create a new RoLearn account"
+---
+
+<ParamField body="email" type="string" required>
+  User's email address
+</ParamField>
+
+<ParamField body="password" type="string" required>
+  Password (minimum 6 characters)
+</ParamField>
+
+<RequestExample>
+```bash
+curl -X POST https://rolearn.dev/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"email": "dev@example.com", "password": "securepass123"}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIs...",
+  "token_type": "bearer"
+}
+```
+</ResponseExample>

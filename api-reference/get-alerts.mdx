@@ -1,0 +1,30 @@
+---
+title: Get Alerts
+api: "GET /api/alerts/my"
+description: "Get all alerts for the authenticated user"
+---
+
+Returns all alerts belonging to the current user, including viewed and unviewed.
+
+<RequestExample>
+```bash
+curl https://rolearn.dev/api/alerts/my \
+  -H "Authorization: Bearer YOUR_TOKEN"
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "alerts": [
+    {
+      "id": 42,
+      "message": "Blox Fruits CCU exceeded 500,000",
+      "type": "ccu_spike",
+      "viewed": false,
+      "created_at": "2026-03-13T03:15:00Z"
+    }
+  ]
+}
+```
+</ResponseExample>

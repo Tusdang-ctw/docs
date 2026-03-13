@@ -1,0 +1,46 @@
+---
+title: Trending Games
+api: "GET /api/trending"
+description: "Get trending Roblox games ranked by CCU"
+---
+
+Returns games ranked by current concurrent users, with trend scores and CCU history.
+
+<ParamField query="period" type="string" default="24h">
+  Time period for trending calculation. Options: `1h`, `6h`, `24h`, `7d`, `30d`
+</ParamField>
+
+<ParamField query="genre" type="string">
+  Filter by genre (e.g., `simulator`, `rpg`, `tycoon`)
+</ParamField>
+
+<ParamField query="limit" type="integer" default="50">
+  Number of games to return (plan-gated)
+</ParamField>
+
+<RequestExample>
+```bash
+curl "https://rolearn.dev/api/trending?period=24h&genre=simulator&limit=10" \
+  -H "Authorization: Bearer YOUR_TOKEN"
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "games": [
+    {
+      "place_id": 2753915549,
+      "name": "Blox Fruits",
+      "creator": "Gamer Robot",
+      "genre": "RPG",
+      "ccu": 485000,
+      "trend_score": 0.98,
+      "ccu_history": [470000, 475000, 480000, 485000]
+    }
+  ],
+  "total": 150,
+  "period": "24h"
+}
+```
+</ResponseExample>

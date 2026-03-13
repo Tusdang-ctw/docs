@@ -1,0 +1,45 @@
+---
+title: API Overview
+description: "RoLearn REST API reference"
+---
+
+The RoLearn API provides programmatic access to all platform data — trending games, forecasts, genre analytics, and more.
+
+## Base URL
+
+```
+https://rolearn.dev/api
+```
+
+## Authentication
+
+Most endpoints require a JWT token obtained via the login endpoint. Include it as a Bearer token:
+
+```bash
+curl -H "Authorization: Bearer YOUR_TOKEN" https://rolearn.dev/api/trending
+```
+
+Some read-only endpoints (trending, market overview) work without authentication but return limited data based on plan.
+
+## Rate Limits
+
+Rate limits vary by plan and endpoint. The API returns standard HTTP 429 responses when limits are exceeded.
+
+## Response Format
+
+All responses are JSON. Successful responses return the data directly. Errors return:
+
+```json
+{
+  "detail": "Error description"
+}
+```
+
+## Plan-Based Access
+
+Many endpoints gate their response based on your subscription plan:
+- **Explorer (Free)**: Limited data (e.g., 10 trending games, score-only ML predictions)
+- **Builder**: Extended data (e.g., 50 trending games, detailed predictions)
+- **Studio**: Full access (unlimited results, AI features, confidence intervals)
+
+Gated fields return `null` or `"locked": true` when your plan doesn't include them.

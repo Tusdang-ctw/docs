@@ -1,0 +1,55 @@
+---
+title: Dev Lens Analyze
+api: "POST /api/dev-lens/analyze"
+description: "Upload a Roblox Analytics CSV for AI-powered analysis"
+---
+
+<Warning>
+  Requires **Studio** plan.
+</Warning>
+
+Upload a CSV file exported from Roblox Studio Analytics. The AI engine will parse, benchmark against genre averages, detect patterns, and return actionable insights.
+
+Supported CSV types: Retention, DAU/DAUR, Playtime, Sessions, Revenue.
+
+<ParamField body="file" type="file" required>
+  The CSV file to analyze (multipart/form-data)
+</ParamField>
+
+<ParamField body="genre" type="string">
+  Game genre for benchmarking (e.g., `simulator`, `rpg`)
+</ParamField>
+
+<RequestExample>
+```bash
+curl -X POST https://rolearn.dev/api/dev-lens/analyze \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -F "file=@retention_data.csv" \
+  -F "genre=simulator"
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "file_type": "retention",
+  "metrics": {
+    "d1_retention": 0.42,
+    "d7_retention": 0.18,
+    "d30_retention": 0.08
+  },
+  "benchmarks": {
+    "d1_vs_genre": "+5%",
+    "d7_vs_genre": "-2%"
+  },
+  "patterns": [
+    "Retention drops sharply after Day 3 — consider adding a Day 3 reward"
+  ],
+  "ai_analysis": "Your retention curve shows strong D1 but a cliff at D3-D7. This pattern is common in simulators that lack mid-game progression...",
+  "recommendations": [
+    "Add a progression milestone between Day 3-5",
+    "Implement a daily reward calendar"
+  ]
+}
+```
+</ResponseExample>

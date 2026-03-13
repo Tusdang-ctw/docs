@@ -1,0 +1,38 @@
+---
+title: Game Details
+api: "GET /api/game/{place_id}"
+description: "Get detailed intelligence for a specific game"
+---
+
+Returns comprehensive data for a single game including CCU history, ML predictions, engagement metrics, and clone detection results.
+
+<ParamField path="place_id" type="integer" required>
+  The Roblox Place ID of the game
+</ParamField>
+
+<RequestExample>
+```bash
+curl https://rolearn.dev/api/game/2753915549 \
+  -H "Authorization: Bearer YOUR_TOKEN"
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "place_id": 2753915549,
+  "name": "Blox Fruits",
+  "creator": "Gamer Robot",
+  "genre": "RPG",
+  "ccu": 485000,
+  "visits": 45000000000,
+  "likes": 12000000,
+  "favorites": 35000000,
+  "ccu_history": [],
+  "ml_prediction": {
+    "trend_score": 0.98,
+    "growth_probability": 0.72
+  }
+}
+```
+</ResponseExample>

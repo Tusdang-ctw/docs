@@ -1,0 +1,31 @@
+---
+title: Genre Opportunities
+api: "GET /api/genre-opportunities"
+description: "Get genre opportunity scores and analytics"
+---
+
+Returns opportunity scores for each Roblox genre, based on growth rate, saturation, and revenue potential.
+
+<RequestExample>
+```bash
+curl https://rolearn.dev/api/genre-opportunities \
+  -H "Authorization: Bearer YOUR_TOKEN"
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "genres": [
+    {
+      "name": "Horror",
+      "opportunity_score": 0.85,
+      "game_count": 3200,
+      "avg_ccu": 1500,
+      "growth_rate": 0.12,
+      "saturation": "medium"
+    }
+  ]
+}
+```
+</ResponseExample>

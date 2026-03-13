@@ -1,0 +1,25 @@
+---
+title: Untrack Game
+api: "DELETE /api/track/{universe_id}"
+description: "Remove a game from your tracked games list"
+---
+
+<ParamField path="universe_id" type="integer" required>
+  The Roblox Universe ID of the game to untrack
+</ParamField>
+
+<RequestExample>
+```bash
+curl -X DELETE https://rolearn.dev/api/track/2753915549 \
+  -H "Authorization: Bearer YOUR_TOKEN"
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "status": "untracked",
+  "universe_id": 2753915549
+}
+```
+</ResponseExample>

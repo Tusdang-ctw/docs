@@ -1,0 +1,35 @@
+---
+title: Genre Timing
+api: "GET /api/genre-timing"
+description: "Get launch timing recommendations per genre/theme"
+---
+
+Returns optimal launch windows for each game theme, based on seasonal events and historical CCU patterns.
+
+<RequestExample>
+```bash
+curl https://rolearn.dev/api/genre-timing \
+  -H "Authorization: Bearer YOUR_TOKEN"
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "recommendations": [
+    {
+      "theme": "Horror",
+      "best_windows": [
+        {
+          "period": "Oct 1 - Oct 31",
+          "event": "Halloween",
+          "score": 0.95,
+          "reason": "Horror CCU peaks 200-300% during Halloween season"
+        }
+      ],
+      "avoid": ["Dec 20 - Jan 5"]
+    }
+  ]
+}
+```
+</ResponseExample>

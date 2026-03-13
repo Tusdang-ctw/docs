@@ -1,0 +1,35 @@
+---
+title: Revenue Simulator
+description: "Estimate potential revenue based on game metrics"
+icon: "calculator"
+---
+
+The Revenue Simulator helps you estimate how much a Roblox game could earn based on its player engagement and monetization setup.
+
+## How It Works
+
+The simulator uses a **Gradient Boosting model** trained on real gamepass and engagement data. Input your expected metrics and get revenue projections.
+
+## Inputs
+
+| Parameter | Description |
+|-----------|-------------|
+| Average CCU | Expected concurrent players |
+| Gamepass count | Number of gamepasses offered |
+| Average gamepass price | Mean price across all passes |
+| Genre | Game genre (affects conversion rates) |
+| Engagement score | Player retention/engagement estimate |
+
+## Output
+
+- **Monthly revenue estimate** with confidence range
+- **Revenue breakdown** by gamepass tier
+- **Comparison** against genre average revenue
+
+## Plan Limits
+
+| Plan | Daily Simulations |
+|------|:-:|
+| Explorer | — |
+| Builder | 5 |
+| Studio | Unlimited |

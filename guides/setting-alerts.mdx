@@ -1,0 +1,36 @@
+---
+title: Setting Alerts
+description: "Configure notifications for game events and market changes"
+icon: "bell"
+---
+
+Alerts notify you when important events happen — CCU spikes, trend changes, or competitor movements.
+
+## Creating an Alert
+
+1. Navigate to the **Alerts** page from the sidebar
+2. Click **New Alert**
+3. Select the game, alert type, and threshold
+4. Save — you'll see alerts in your dashboard feed
+
+## Alert Types
+
+| Type | Description |
+|------|-------------|
+| CCU Spike | Triggers when a game's CCU exceeds your threshold |
+| Trend Change | Triggers when a game's trend direction changes (up → down or vice versa) |
+| Competitor | Triggers when a competing game in your genre makes a significant move |
+
+## Managing Alerts
+
+- View all alerts at `/alerts` or via `GET /api/alerts/my`
+- Mark alerts as viewed by clicking them
+- Delete alerts you no longer need
+
+## Email Alerts
+
+Email notifications are available on **Builder** and **Studio** plans. When enabled, you'll receive an email in addition to the in-dashboard notification.
+
+<Note>
+  Alerts are processed every 15 minutes by the background worker.
+</Note>

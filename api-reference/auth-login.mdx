@@ -1,0 +1,30 @@
+---
+title: Login
+api: "POST /api/auth/login"
+description: "Authenticate and receive a JWT token"
+---
+
+<ParamField body="email" type="string" required>
+  Registered email address
+</ParamField>
+
+<ParamField body="password" type="string" required>
+  Account password
+</ParamField>
+
+<RequestExample>
+```bash
+curl -X POST https://rolearn.dev/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email": "dev@example.com", "password": "securepass123"}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIs...",
+  "token_type": "bearer"
+}
+```
+</ResponseExample>

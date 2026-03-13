@@ -1,0 +1,48 @@
+---
+title: Trending Games
+description: "Real-time trending rankings updated every 5 minutes"
+icon: "fire"
+---
+
+The Trending Games page surfaces the most popular Roblox games ranked by current concurrent users (CCU), updated every 5 minutes.
+
+## How It Works
+
+RoLearn ingests CCU data from the Roblox API in two tiers:
+- **Tier 1**: Top 300 games by CCU — updated every 5 minutes
+- **Tier 2**: 800 rotating games — full cycle every ~5 hours
+
+Each game receives a **trend score** (0–1) based on its normalized CCU rank across all tracked games.
+
+## Features
+
+<CardGroup cols={2}>
+  <Card title="Time Periods" icon="clock">
+    Filter by 1h, 6h, 24h, 7d, or 30d windows to see what's trending now vs. what's been growing steadily.
+  </Card>
+  <Card title="Genre Filters" icon="filter">
+    Narrow results to specific genres like Simulator, RPG, Tycoon, Horror, and more.
+  </Card>
+  <Card title="CCU Charts" icon="chart-line">
+    Inline sparkline charts show CCU trajectory at a glance.
+  </Card>
+  <Card title="Breakout Radar" icon="radar">
+    Separate view that weights visits (70%) and likes (30%) to find games gaining momentum beyond just CCU.
+  </Card>
+</CardGroup>
+
+## API Endpoint
+
+```
+GET /api/trending?period=24h&genre=simulator&limit=50
+```
+
+See [API Reference → Trending](/api-reference/trending) for full details.
+
+## Plan Limits
+
+| Plan | Games Returned |
+|------|:-:|
+| Explorer | 10 |
+| Builder | 50 |
+| Studio | Unlimited |

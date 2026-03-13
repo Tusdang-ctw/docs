@@ -1,0 +1,37 @@
+---
+title: CCU Forecasting
+description: "ML-powered player count predictions using Prophet"
+icon: "chart-line"
+---
+
+CCU Forecasting uses Meta's **Prophet** time-series model to predict future player counts for any tracked game.
+
+## How It Works
+
+1. Historical CCU data is collected every 5 minutes
+2. Data is aggregated into daily or hourly buckets
+3. Prophet model is trained daily (4 AM) on the aggregated data
+4. Forecasts project 7–30 days into the future with confidence intervals
+
+## Features
+
+- **Point forecasts**: Expected CCU for each future day
+- **Confidence intervals**: Upper and lower bounds showing prediction uncertainty
+- **Trend decomposition**: See seasonal patterns (weekday vs. weekend, holidays)
+- **Multiple horizons**: Short-term (7d) and long-term (30d) projections
+
+## API Endpoint
+
+```
+GET /api/forecast/{place_id}
+```
+
+See [API Reference → Forecast](/api-reference/game-forecast) for full details.
+
+## Plan Limits
+
+| Plan | Forecast Access |
+|------|:-:|
+| Explorer | — |
+| Builder | Basic (7-day) |
+| Studio | Advanced (30-day + confidence) |

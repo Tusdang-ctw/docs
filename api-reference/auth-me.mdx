@@ -1,0 +1,27 @@
+---
+title: Get Current User
+api: "GET /api/auth/me"
+description: "Get the authenticated user's profile"
+---
+
+Returns the current user's profile including plan, subscription status, and tracked games.
+
+<RequestExample>
+```bash
+curl https://rolearn.dev/api/auth/me \
+  -H "Authorization: Bearer YOUR_TOKEN"
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "id": 1,
+  "email": "dev@example.com",
+  "plan": "builder",
+  "subscription_status": "active",
+  "tracked_games": [2753915549, 16732694052],
+  "is_admin": false
+}
+```
+</ResponseExample>

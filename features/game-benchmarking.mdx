@@ -1,0 +1,36 @@
+---
+title: Game Benchmarking
+description: "Compare your game against genre averages and top performers"
+icon: "scale-balanced"
+---
+
+Game Benchmarking lets you compare any Roblox game's metrics against genre averages and top performers in the same category.
+
+## How It Works
+
+Submit a game's Place ID to receive a benchmark report comparing it across multiple dimensions.
+
+## Metrics Compared
+
+| Metric | Description |
+|--------|-------------|
+| CCU | Current concurrent users vs. genre average |
+| Visits | Total visits vs. genre median |
+| Like ratio | Likes-to-visits ratio vs. genre benchmark |
+| Favorite ratio | Favorites-to-visits ratio |
+| Gamepass count | Number of passes vs. genre average |
+| Gamepass pricing | Average price vs. genre range |
+
+## Output
+
+- **Percentile rankings** for each metric within the genre
+- **Score card** with color-coded performance indicators (green/amber/red)
+- **Recommendations** based on identified gaps
+
+## API Endpoint
+
+```
+POST /api/benchmark
+```
+
+See [API Reference → Benchmark](/api-reference/benchmark) for full details.

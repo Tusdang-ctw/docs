@@ -1,0 +1,43 @@
+---
+title: Dev Lens
+description: "AI-powered CSV analytics for Roblox Analytics exports"
+icon: "microscope"
+---
+
+Dev Lens is an AI-powered analytics engine that parses your Roblox Analytics CSV exports and provides actionable insights with genre-based benchmarking.
+
+## How It Works
+
+1. Export your analytics CSV from Roblox Studio
+2. Upload it to Dev Lens
+3. Get instant AI analysis with benchmarks and recommendations
+
+## Supported File Types
+
+| File Type | Metrics Analyzed |
+|-----------|-----------------|
+| Retention | D1, D7, D30 retention curves |
+| DAU/DAUR | Daily active users and returning users |
+| Playtime | Session duration and engagement depth |
+| Sessions | Session count and frequency |
+| Revenue | Earnings, ARPPU, conversion rates |
+
+## Analysis Output
+
+- **Pattern detection**: Identifies retention drops, revenue leaks, monetization friction
+- **Genre benchmarks**: Compares your metrics against 11 genre-specific thresholds
+- **AI insights**: Natural language analysis powered by Claude Haiku
+- **Actionable recommendations**: Specific suggestions to improve weak areas
+
+<Warning>
+  Dev Lens is available exclusively on the **Studio** plan.
+</Warning>
+
+## API Endpoint
+
+```
+POST /api/dev-lens/analyze
+Content-Type: multipart/form-data
+```
+
+See [API Reference → Dev Lens](/api-reference/dev-lens-analyze) for full details.

@@ -1,0 +1,41 @@
+---
+title: Revenue Simulator
+api: "POST /api/revenue-simulator"
+description: "Estimate potential revenue for a game configuration"
+---
+
+<ParamField body="avg_ccu" type="integer" required>
+  Expected average concurrent users
+</ParamField>
+
+<ParamField body="gamepass_count" type="integer" required>
+  Number of gamepasses
+</ParamField>
+
+<ParamField body="avg_gamepass_price" type="number" required>
+  Average gamepass price in Robux
+</ParamField>
+
+<ParamField body="genre" type="string" required>
+  Game genre
+</ParamField>
+
+<RequestExample>
+```bash
+curl -X POST https://rolearn.dev/api/revenue-simulator \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"avg_ccu": 5000, "gamepass_count": 5, "avg_gamepass_price": 250, "genre": "simulator"}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "monthly_estimate": 12500,
+  "yearly_estimate": 150000,
+  "confidence": "medium",
+  "genre_avg_revenue": 8000
+}
+```
+</ResponseExample>

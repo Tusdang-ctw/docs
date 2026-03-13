@@ -1,0 +1,41 @@
+---
+title: Tracking Games
+description: "How to track games and monitor their performance"
+icon: "crosshairs"
+---
+
+Tracking a game adds it to your personal watchlist. Tracked games get priority CCU monitoring, forecast generation, and alert capabilities.
+
+## How to Track a Game
+
+1. **Search** for a game using the search bar or browse trending/popular pages
+2. Click the **Track** button on the game card
+3. The game appears in your tracked games list on the dashboard
+
+## What Tracking Enables
+
+- **CCU history**: See detailed CCU charts for the past 7–90 days (plan-dependent)
+- **Forecasts**: Prophet-based CCU predictions for tracked games
+- **Alerts**: Set up notifications for CCU thresholds or trend changes
+- **Benchmarking**: Quick-access benchmarking against genre competitors
+- **Update tracking**: Log and analyze game updates (Studio plan)
+
+## Tracking Limits
+
+| Plan | Max Tracked Games |
+|------|:-:|
+| Explorer | 3 |
+| Builder | 15 |
+| Studio | 50 |
+
+## Via API
+
+```bash
+# Track a game
+curl -X POST https://rolearn.dev/api/track/2753915549 \
+  -H "Authorization: Bearer YOUR_TOKEN"
+
+# Untrack a game
+curl -X DELETE https://rolearn.dev/api/track/2753915549 \
+  -H "Authorization: Bearer YOUR_TOKEN"
+```

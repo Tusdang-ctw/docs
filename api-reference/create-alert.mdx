@@ -1,0 +1,38 @@
+---
+title: Create Alert
+api: "POST /api/alerts"
+description: "Create a new alert for game events"
+---
+
+<ParamField body="game_id" type="integer" required>
+  Universe ID of the game to monitor
+</ParamField>
+
+<ParamField body="type" type="string" required>
+  Alert type (e.g., `ccu_spike`, `trend_change`, `competitor`)
+</ParamField>
+
+<ParamField body="threshold" type="number">
+  Threshold value for triggering the alert
+</ParamField>
+
+<RequestExample>
+```bash
+curl -X POST https://rolearn.dev/api/alerts \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"game_id": 2753915549, "type": "ccu_spike", "threshold": 500000}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "id": 42,
+  "game_id": 2753915549,
+  "type": "ccu_spike",
+  "threshold": 500000,
+  "created_at": "2026-03-13T03:00:00Z"
+}
+```
+</ResponseExample>

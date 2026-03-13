@@ -1,0 +1,36 @@
+---
+title: Game Forecast
+api: "GET /api/forecast/{place_id}"
+description: "Get CCU forecast for a specific game"
+---
+
+Returns Prophet-based CCU predictions for a tracked game.
+
+<ParamField path="place_id" type="integer" required>
+  The Roblox Place ID of the game
+</ParamField>
+
+<RequestExample>
+```bash
+curl https://rolearn.dev/api/forecast/2753915549 \
+  -H "Authorization: Bearer YOUR_TOKEN"
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "place_id": 2753915549,
+  "forecast": [
+    {
+      "date": "2026-03-14",
+      "predicted_ccu": 490000,
+      "lower_bound": 460000,
+      "upper_bound": 520000
+    }
+  ],
+  "model_version": "prophet_v2",
+  "generated_at": "2026-03-13T04:00:00Z"
+}
+```
+</ResponseExample>

@@ -1,0 +1,38 @@
+---
+title: Benchmark
+api: "POST /api/benchmark"
+description: "Benchmark a game against genre averages"
+---
+
+<ParamField body="place_id" type="integer" required>
+  The Roblox Place ID to benchmark
+</ParamField>
+
+<RequestExample>
+```bash
+curl -X POST https://rolearn.dev/api/benchmark \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"place_id": 2753915549}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "game": "Blox Fruits",
+  "genre": "RPG",
+  "metrics": {
+    "ccu_percentile": 99,
+    "visits_percentile": 98,
+    "like_ratio_percentile": 85,
+    "gamepass_count_percentile": 72
+  },
+  "genre_averages": {
+    "avg_ccu": 2400,
+    "avg_visits": 15000000,
+    "avg_like_ratio": 0.04
+  }
+}
+```
+</ResponseExample>

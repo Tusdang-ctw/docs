@@ -1,0 +1,33 @@
+---
+title: Search
+api: "GET /api/search"
+description: "Search for Roblox games by name"
+---
+
+<ParamField query="q" type="string" required>
+  Search query string
+</ParamField>
+
+<RequestExample>
+```bash
+curl "https://rolearn.dev/api/search?q=blox+fruits" \
+  -H "Authorization: Bearer YOUR_TOKEN"
+```
+</RequestExample>
+
+<ResponseExample>
+```json
+{
+  "results": [
+    {
+      "place_id": 2753915549,
+      "name": "Blox Fruits",
+      "creator": "Gamer Robot",
+      "genre": "RPG",
+      "ccu": 485000
+    }
+  ],
+  "total": 1
+}
+```
+</ResponseExample>

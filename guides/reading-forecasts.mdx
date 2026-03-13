@@ -1,0 +1,44 @@
+---
+title: Reading Forecasts
+description: "How to interpret CCU forecasts and confidence intervals"
+icon: "chart-line"
+---
+
+Forecasts predict future CCU for your tracked games using Meta's Prophet time-series model.
+
+## Understanding the Forecast Chart
+
+The forecast chart shows three lines:
+- **Predicted CCU** (solid blue): The model's best estimate
+- **Upper bound** (dashed, lighter): Optimistic scenario
+- **Lower bound** (dashed, lighter): Conservative scenario
+
+The wider the confidence interval, the more uncertain the prediction.
+
+## What Affects Forecast Accuracy
+
+<AccordionGroup>
+  <Accordion title="More history = better predictions">
+    Games with 30+ days of CCU history produce more reliable forecasts than recently tracked games.
+  </Accordion>
+  <Accordion title="Seasonal patterns matter">
+    Prophet automatically detects weekly patterns (weekday vs. weekend) and seasonal trends (holiday spikes).
+  </Accordion>
+  <Accordion title="Updates can break patterns">
+    A major game update can shift CCU dramatically. Forecasts based on pre-update data may not reflect the new reality until enough post-update data accumulates.
+  </Accordion>
+</AccordionGroup>
+
+## Forecast Horizons
+
+| Plan | Forecast Range |
+|------|:-:|
+| Explorer | — |
+| Builder | 7 days |
+| Studio | 30 days + confidence intervals |
+
+## Tips
+
+- **Compare forecast vs. actual**: Check back after a few days to see how the prediction held up
+- **Watch the trend, not the number**: The direction matters more than the exact CCU value
+- **Use with benchmarking**: Combine forecasts with genre benchmarks to understand if growth is above or below genre norms

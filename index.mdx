@@ -1,97 +1,57 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: Introduction
+description: "Predictive market intelligence for Roblox developers"
 ---
 
-## Setting up
+# Welcome to RoLearn
 
-Get your documentation site up and running in minutes.
+RoLearn is a market intelligence platform that helps Roblox developers identify trends, predict market movements, and optimize monetization using ML predictions and real Roblox API data.
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
-
-## Make it yours
-
-Design a docs site that looks great and empowers your users.
-
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
+<CardGroup cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Get up and running in under 5 minutes
   </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
+  <Card title="Features" icon="stars" href="/features/trending-games">
+    Explore all platform features
   </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
+  <Card title="API Reference" icon="code" href="/api-reference/overview">
+    Integrate RoLearn data into your workflow
   </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
+  <Card title="Plans & Pricing" icon="credit-card" href="/plans">
+    Compare Explorer, Builder, and Studio tiers
   </Card>
-</Columns>
+</CardGroup>
 
-## Create beautiful pages
+## What can you do with RoLearn?
 
-Everything you need to create world-class documentation.
+<AccordionGroup>
+  <Accordion title="Discover trending games before they blow up">
+    Our ML-powered trend detection analyzes CCU velocity, engagement ratios, and genre dynamics to surface breakout games early — often days before they appear on Roblox's own trending lists.
+  </Accordion>
+  <Accordion title="Forecast CCU and revenue">
+    Prophet-based forecasting models predict future CCU trajectories for any tracked game. Revenue estimation combines gamepass analysis with player engagement data.
+  </Accordion>
+  <Accordion title="Find underserved genres">
+    The Genre Opportunity Engine scores genres by saturation, growth rate, and revenue potential — helping you find the right niche before building.
+  </Accordion>
+  <Accordion title="Benchmark your game against competitors">
+    Compare your game's CCU, engagement, and monetization metrics against genre averages and top performers.
+  </Accordion>
+  <Accordion title="Analyze updates with AI">
+    Track how your game updates affect player counts, with AI-powered analysis of what worked and what didn't.
+  </Accordion>
+</AccordionGroup>
 
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
+## Architecture Overview
 
-## Need inspiration?
+RoLearn pulls live data from the Roblox API every 5 minutes, processes it through ML pipelines, and serves predictions via a REST API that powers the dashboard.
 
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+```
+Roblox API → Celery Workers → PostgreSQL + Redis → FastAPI → React Dashboard
+                ↓
+         ML Models (LightGBM, Prophet, Gradient Boosting)
+```
+
+<Note>
+  RoLearn tracks **50,000+ Roblox games** with CCU data ingested every 5 minutes. New games are discovered automatically via smart scanning.
+</Note>
