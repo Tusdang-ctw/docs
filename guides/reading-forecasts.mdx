@@ -1,90 +1,44 @@
 ---
-title: "How to Read and Interpret Roblox CCU Forecasts"
-sidebarTitle: "Reading Forecasts"
-description: "Learn how to interpret RoLearn's ML-powered CCU forecasts, understand confidence intervals, and use predictions to make better decisions for your Roblox game."
+title: Reading Forecasts
+description: "How to interpret RoLearn's Roblox CCU forecasts — understand prediction charts, confidence intervals, and forecast accuracy"
 icon: "chart-line"
 ---
 
-Forecasts predict future CCU for your tracked games using Meta's Prophet time-series model. This guide explains how to read the charts, interpret confidence intervals, and turn predictions into actionable decisions.
+Forecasts predict future CCU for your tracked games using advanced time-series machine learning.
 
 ## Understanding the Forecast Chart
 
-The forecast chart shows three elements:
+The forecast chart shows three lines:
+- **Predicted CCU** (solid blue): The model's best estimate
+- **Upper bound** (dashed, lighter): Optimistic scenario
+- **Lower bound** (dashed, lighter): Conservative scenario
 
-| Element | Visual | Meaning |
-|---------|--------|---------|
-| **Predicted CCU** | Solid blue line | The model's best single estimate for future player counts |
-| **Upper bound** | Dashed lighter line | Optimistic scenario — things could be this good |
-| **Lower bound** | Dashed lighter line | Conservative scenario — things could be this challenging |
-
-The area between the upper and lower bounds is the **confidence interval**. Think of it as the range of likely outcomes.
-
-## Reading Confidence Intervals
-
-<AccordionGroup>
-  <Accordion title="Narrow interval = high confidence">
-    When the upper and lower bounds are close together, the model is confident in its prediction. This usually happens with games that have consistent, predictable CCU patterns and lots of historical data.
-  </Accordion>
-  <Accordion title="Wide interval = more uncertainty">
-    When the bounds are far apart, the model is less sure. This happens with volatile games, recently tracked games, or games that just had a major update that broke historical patterns.
-  </Accordion>
-  <Accordion title="Interval widens over time">
-    Forecasts get less certain the further out they go. The 7-day prediction will always be tighter than the 30-day prediction. This is normal and expected — the future is inherently uncertain.
-  </Accordion>
-</AccordionGroup>
+The wider the confidence interval, the more uncertain the prediction.
 
 ## What Affects Forecast Accuracy
 
-<CardGroup cols={2}>
-  <Card title="Data History" icon="database">
-    Games with 30+ days of tracking history produce the most reliable forecasts. Recently tracked games have wider confidence intervals.
-  </Card>
-  <Card title="Seasonal Patterns" icon="sun">
-    Prophet automatically detects weekly patterns (weekday vs. weekend) and seasonal trends (holiday spikes, school breaks). More history = better seasonal modeling.
-  </Card>
-  <Card title="Game Updates" icon="wrench">
-    A major game update can shift CCU dramatically. The forecast won't predict an update you haven't pushed yet, and it takes a few days of post-update data for the model to adjust.
-  </Card>
-  <Card title="External Events" icon="globe">
-    Viral moments (streamer coverage, TikTok trends) cause unpredictable spikes that the model can't anticipate. Use the forecast for baseline trends, not black swan events.
-  </Card>
-</CardGroup>
-
-## How to Use Forecasts
-
 <AccordionGroup>
-  <Accordion title="Timing your updates">
-    If the forecast shows a natural CCU dip in 3-4 days (common mid-week), schedule your content update for that window. You'll counteract the dip and potentially create an uptrend.
+  <Accordion title="More history = better predictions">
+    Games with 30+ days of CCU history produce more reliable forecasts than recently tracked games.
   </Accordion>
-  <Accordion title="Setting realistic expectations">
-    If the forecast shows gradual decline over 30 days, don't panic — but do plan. This is a signal that you need fresh content or a marketing push to reverse the trend.
+  <Accordion title="Seasonal patterns matter">
+    The model automatically detects weekly patterns (weekday vs. weekend) and seasonal trends (holiday spikes).
   </Accordion>
-  <Accordion title="Evaluating if growth is sustainable">
-    After a CCU spike, check the forecast. If the model projects CCU staying near the new level, the growth is likely sustainable. If it projects a return to pre-spike levels, the spike was temporary.
-  </Accordion>
-  <Accordion title="Comparing games in your portfolio">
-    Look at forecasts for all your tracked games side by side. Allocate development time to the games with the best growth trajectories — they'll give you the best return on effort.
+  <Accordion title="Updates can break patterns">
+    A major game update can shift CCU dramatically. Forecasts based on pre-update data may not reflect the new reality until enough post-update data accumulates.
   </Accordion>
 </AccordionGroup>
 
-## Common Mistakes
-
-<Warning>
-  Don't treat the predicted line as a guarantee. It's the most likely outcome, but the actual CCU can land anywhere within the confidence interval — or even outside it during unusual events.
-</Warning>
-
-- **Over-reacting to a single day**: Forecasts show trends, not exact daily numbers. If actual CCU dips below the prediction for one day, that's noise, not a crisis.
-- **Ignoring the bounds**: The predicted line gets all the attention, but the upper and lower bounds tell you the range of realistic outcomes. Plan for the lower bound, hope for the upper.
-- **Expecting predictions for untracked games**: Forecasts require tracking history. You can't get a forecast for a game you just started tracking today.
-
 ## Forecast Horizons
 
-| Plan | Forecast Range | Confidence Intervals |
-|------|:-:|:-:|
-| Explorer | — | — |
-| Builder | 7 days | Basic |
-| Studio | 30 days | Full with decomposition |
+| Plan | Forecast Range |
+|------|:-:|
+| Explorer | — |
+| Builder | 7 days |
+| Studio | 30 days + confidence intervals |
 
-<Tip>
-  Check back on forecasts after a week to see how they held up. Over time, you'll develop an intuition for how much to trust the model for different types of games.
-</Tip>
+## Tips
+
+- **Compare forecast vs. actual**: Check back after a few days to see how the prediction held up
+- **Watch the trend, not the number**: The direction matters more than the exact CCU value
+- **Use with benchmarking**: Combine forecasts with [genre benchmarks](/features/game-benchmarking) to understand if growth is above or below genre norms

@@ -1,68 +1,45 @@
 ---
-title: "Dev Lens — AI-Powered Roblox Analytics Analysis"
-sidebarTitle: "Dev Lens"
-description: "Upload your Roblox Studio analytics CSV exports and get instant AI-powered analysis with genre benchmarks, pattern detection, and actionable recommendations."
+title: Dev Lens
+description: "Upload your Roblox Studio analytics CSV and get AI-powered insights — retention analysis, revenue benchmarks, and actionable recommendations"
 icon: "microscope"
 ---
 
-Dev Lens is an AI-powered analytics engine that parses your Roblox Analytics CSV exports and provides actionable insights with genre-based benchmarking. Upload your data, get instant analysis — no spreadsheet skills required.
-
-## Why Use Dev Lens?
-
-Roblox Studio gives you raw analytics data, but interpreting it requires experience. What's a "good" D7 retention rate? Is your revenue per user high or low for your genre? Dev Lens answers these questions automatically by comparing your data against benchmarks from 11 Roblox genres.
+Dev Lens is an AI-powered analytics engine that parses your Roblox Analytics CSV exports and delivers actionable insights with genre-based benchmarking.
 
 ## How It Works
 
-<Steps>
-  <Step title="Export from Roblox Studio">
-    Open your game in Roblox Studio, go to Analytics, and export any CSV file (Retention, DAU, Playtime, Sessions, or Revenue).
-  </Step>
-  <Step title="Upload to Dev Lens">
-    Drag and drop your CSV file into the Dev Lens page. You can upload up to 5 files at once for a comprehensive analysis.
-  </Step>
-  <Step title="Get AI Analysis">
-    Within seconds, you'll receive pattern detection, genre benchmarks, and specific recommendations — powered by Claude AI with rule-based fallback.
-  </Step>
-</Steps>
+1. Export your analytics CSV from Roblox Studio
+2. Upload it to Dev Lens
+3. Get instant AI analysis with benchmarks and recommendations
 
 ## Supported File Types
 
-| File Type | Metrics Analyzed | Key Benchmarks |
-|-----------|-----------------|----------------|
-| Retention | D1, D7, D30 retention curves | Genre-specific retention thresholds |
-| DAU/DAUR | Daily active and returning users | Growth rate vs. genre average |
-| Playtime | Session duration and depth | Engagement depth benchmarks |
-| Sessions | Session count and frequency | Visit frequency norms |
-| Revenue | Earnings, ARPPU, conversion | Monetization efficiency by genre |
+| File Type | Metrics Analyzed |
+|-----------|-----------------|
+| Retention | D1, D7, D30 retention curves |
+| DAU/DAUR | Daily active users and returning users |
+| Playtime | Session duration and engagement depth |
+| Sessions | Session count and frequency |
+| Revenue | Earnings, ARPPU, conversion rates |
 
-## What You Get
+## Analysis Output
 
-<CardGroup cols={2}>
-  <Card title="Pattern Detection" icon="magnifying-glass">
-    Automatically identifies retention drops, revenue leaks, monetization friction points, and engagement anomalies in your data.
-  </Card>
-  <Card title="Genre Benchmarks" icon="chart-bar">
-    Compares every metric against thresholds for 11 Roblox genres. See instantly whether your numbers are above or below average.
-  </Card>
-  <Card title="AI Insights" icon="brain">
-    Natural language analysis powered by Claude Haiku explains *what* the data shows and *why* it matters, in plain English.
-  </Card>
-  <Card title="Action Items" icon="list-check">
-    Specific, prioritized recommendations to improve your weakest metrics. Not generic advice — tailored to your actual data.
-  </Card>
-</CardGroup>
+- **Pattern detection**: Automatically identifies performance patterns and areas for improvement in your game data
+- **Genre benchmarks**: Compares your metrics against genre-specific performance thresholds curated from top-performing games
+- **AI insights**: Natural language analysis powered by advanced AI that reads your data like an experienced game developer would
+- **Actionable recommendations**: Specific suggestions to improve weak areas, prioritized by expected impact
 
-## Use Cases
+## What Dev Lens Can Tell You
 
 <AccordionGroup>
-  <Accordion title="Diagnosing a retention problem">
-    Upload your Retention CSV. If Dev Lens flags a "D3-D7 cliff," it means players enjoy your game initially but lose interest after a few days. The AI will suggest specific interventions like progression milestones or daily rewards.
+  <Accordion title="Is my retention healthy?">
+    Dev Lens compares your D1, D7, and D30 retention against genre benchmarks. If your D1 is strong but D7 drops sharply, it pinpoints the gap and suggests fixes like adding mid-term progression goals.
   </Accordion>
-  <Accordion title="Optimizing monetization">
-    Upload your Revenue CSV alongside your Sessions CSV. Dev Lens can identify if you have high engagement but low conversion (players love the game but won't pay) and suggest gamepass strategies for your genre.
+  <Accordion title="Am I leaving money on the table?">
+    The AI analyzes your monetization funnel — identifying where players are dropping off before reaching your shop, gamepasses, or premium features.
   </Accordion>
-  <Accordion title="Monthly health check">
-    Make it a habit: export your CSVs on the 1st of each month, upload to Dev Lens, and compare against last month. Track whether your changes are moving metrics in the right direction.
+  <Accordion title="How do I compare to competitors?">
+    Genre-specific benchmarks show exactly where you stand vs. top games in your category across retention, engagement, and revenue metrics.
   </Accordion>
 </AccordionGroup>
 
@@ -70,14 +47,11 @@ Roblox Studio gives you raw analytics data, but interpreting it requires experie
   Dev Lens is available exclusively on the **Studio** plan.
 </Warning>
 
-<Tip>
-  Upload multiple file types together for the most comprehensive analysis. Retention + Revenue gives Dev Lens the context to identify monetization-retention correlations that single-file analysis misses.
-</Tip>
-
 ## API Endpoint
 
 ```
 POST /api/dev-lens/analyze
+Content-Type: multipart/form-data
 ```
 
 See [API Reference → Dev Lens](/api-reference/dev-lens-analyze) for full details.

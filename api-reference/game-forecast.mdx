@@ -4,7 +4,7 @@ api: "GET /api/forecast/{place_id}"
 description: "Get CCU forecast for a specific game"
 ---
 
-Returns Prophet-based CCU predictions for a tracked game.
+Returns ML-powered CCU predictions for a tracked game.
 
 <ParamField path="place_id" type="integer" required>
   The Roblox Place ID of the game
@@ -29,8 +29,8 @@ curl https://rolearn.dev/api/forecast/2753915549 \
       "upper_bound": 520000
     }
   ],
-  "model_version": "prophet_v2",
-  "generated_at": "2026-03-13T04:00:00Z"
+  "model_version": "v2",
+  "generated_at": "2026-03-13T08:00:00Z"
 }
 ```
 </ResponseExample>

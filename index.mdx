@@ -1,12 +1,12 @@
 ---
-title: "RoLearn — Predictive Market Intelligence for Roblox Developers"
+title: "RoLearn — Roblox Analytics & Intelligence Platform"
 sidebarTitle: "Introduction"
-description: "RoLearn helps Roblox developers identify trends, predict player counts, and optimize monetization using ML predictions and real-time data from 50,000+ games."
+description: "RoLearn helps Roblox developers discover trends, predict player growth, and optimize monetization with ML-powered analytics and real-time game data."
 ---
 
 # Welcome to RoLearn
 
-RoLearn is a market intelligence platform that helps Roblox developers identify trends, predict market movements, and optimize monetization using ML predictions and real Roblox API data.
+RoLearn is the intelligence platform that helps Roblox developers discover trends, predict player growth, and optimize monetization — powered by machine learning and real Roblox data.
 
 <CardGroup cols={2}>
   <Card title="Quickstart" icon="rocket" href="/quickstart">
@@ -27,10 +27,10 @@ RoLearn is a market intelligence platform that helps Roblox developers identify 
 
 <AccordionGroup>
   <Accordion title="Discover trending games before they blow up">
-    Our ML-powered trend detection analyzes CCU velocity, engagement ratios, and genre dynamics to surface breakout games early — often days before they appear on Roblox's own trending lists.
+    Our ML-powered trend detection analyzes player momentum, engagement patterns, and genre dynamics to surface breakout games early — often before they appear on Roblox's own trending lists.
   </Accordion>
   <Accordion title="Forecast CCU and revenue">
-    Prophet-based forecasting models predict future CCU trajectories for any tracked game. Revenue estimation combines gamepass analysis with player engagement data.
+    Advanced time-series forecasting models predict future CCU trajectories for any tracked game. Revenue estimation combines gamepass analysis with player engagement data.
   </Accordion>
   <Accordion title="Find underserved genres">
     The Genre Opportunity Engine scores genres by saturation, growth rate, and revenue potential — helping you find the right niche before building.
@@ -43,16 +43,27 @@ RoLearn is a market intelligence platform that helps Roblox developers identify 
   </Accordion>
 </AccordionGroup>
 
-## Architecture Overview
+## How RoLearn Works
 
-RoLearn pulls live data from the Roblox API every 5 minutes, processes it through ML pipelines, and serves predictions via a REST API that powers the dashboard.
-
-```
-Roblox API → Celery Workers → PostgreSQL + Redis → FastAPI → React Dashboard
-                ↓
-         ML Models (LightGBM, Prophet, Gradient Boosting)
-```
+RoLearn continuously monitors the Roblox ecosystem using proprietary data pipelines and machine learning models. Live game data is collected, processed, and transformed into actionable predictions — all served through a real-time dashboard and REST API.
 
 <Note>
-  RoLearn tracks **50,000+ Roblox games** with CCU data ingested every 5 minutes. New games are discovered automatically via smart scanning.
+  RoLearn tracks **thousands of Roblox games** across every genre, with data refreshed continuously throughout the day. New games are discovered automatically via smart scanning.
 </Note>
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="How does RoLearn track Roblox game trends?">
+    RoLearn pulls live data from the Roblox API, tracking concurrent players, visits, likes, favorites, and more. Our ML models analyze this data to detect momentum shifts and surface trending games automatically.
+  </Accordion>
+  <Accordion title="Can RoLearn predict future player counts?">
+    Yes. RoLearn uses advanced time-series machine learning to forecast CCU up to 30 days ahead, complete with confidence intervals so you know how reliable each prediction is. See [CCU Forecasting](/features/ccu-forecasting) for details.
+  </Accordion>
+  <Accordion title="What Roblox genres does RoLearn cover?">
+    RoLearn covers all major Roblox genres — Simulator, RPG, Tycoon, Horror, Obby, Social, Fighting, and more. The [Genre Heatmap](/features/genre-heatmap) shows opportunity scores across every genre.
+  </Accordion>
+  <Accordion title="Is RoLearn free for Roblox developers?">
+    Yes! The Explorer plan is completely free with no credit card required. It includes trending game rankings, basic analytics, and limited game tracking. Paid plans unlock ML forecasts, revenue simulation, AI analysis, and more. See [Plans & Pricing](/plans).
+  </Accordion>
+</AccordionGroup>

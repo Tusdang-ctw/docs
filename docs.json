@@ -147,12 +147,17 @@
     ]
   },
   "metadata": {
+    "og:title": "RoLearn — Roblox Intelligence Platform",
+    "og:description": "Track trending Roblox games, forecast CCU, analyze genres, and estimate revenue with ML-powered analytics. Free tools for Roblox developers.",
     "og:site_name": "RoLearn Docs",
     "og:type": "website",
     "og:locale": "en_US",
-    "og:image": "https://rolearn.dev/180x180.png",
-    "twitter:card": "summary",
-    "twitter:site": "@MrAshDang"
+    "og:image": "https://rolearn.dev/og-default.png",
+    "twitter:card": "summary_large_image",
+    "twitter:site": "@MrAshDang",
+    "twitter:title": "RoLearn — Roblox Intelligence Platform",
+    "twitter:description": "ML-powered Roblox analytics: trending games, CCU forecasts, genre opportunities, and revenue estimation.",
+    "twitter:image": "https://rolearn.dev/og-default.png"
   },
   "seo": {
     "indexHiddenPages": false

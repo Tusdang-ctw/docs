@@ -1,72 +1,24 @@
 ---
-title: "How to Track Roblox Games and Monitor Performance"
-sidebarTitle: "Tracking Games"
-description: "Step-by-step guide to tracking Roblox games on RoLearn — add games to your watchlist for CCU monitoring, forecasts, alerts, and competitive intelligence."
+title: Tracking Games
+description: "How to track games and monitor their performance"
 icon: "crosshairs"
 ---
 
-Tracking a game adds it to your personal watchlist. Tracked games get priority CCU monitoring, forecast generation, alert capabilities, and appear in your War Room dashboard.
+Tracking a game adds it to your personal watchlist. Tracked games get priority CCU monitoring, forecast generation, and alert capabilities.
 
 ## How to Track a Game
 
-<Steps>
-  <Step title="Find a game">
-    Use the **search bar** at the top of any page, or browse the Trending, Popular, or Genre pages. You can also enter a Roblox Place ID directly.
-  </Step>
-  <Step title="Click Track">
-    On the game detail page, click the **Track** button. The game is instantly added to your watchlist.
-  </Step>
-  <Step title="View your tracked games">
-    All tracked games appear on your dashboard and in the War Room. You'll start seeing CCU history build up immediately.
-  </Step>
-  <Step title="Set up alerts (optional)">
-    For any tracked game, create alerts to be notified of CCU spikes, trend changes, or competitor movements. See [Setting Alerts](/guides/setting-alerts) for details.
-  </Step>
-</Steps>
+1. **Search** for a game using the search bar or browse trending/popular pages
+2. Click the **Track** button on the game card
+3. The game appears in your tracked games list on the dashboard
 
 ## What Tracking Enables
 
-<CardGroup cols={2}>
-  <Card title="CCU History" icon="clock-rotate-left">
-    See detailed CCU charts for the past 7–90 days depending on your plan. Data is captured every 5 minutes.
-  </Card>
-  <Card title="Forecasts" icon="chart-line">
-    Prophet-based CCU predictions become available once a game has enough historical data (best with 7+ days).
-  </Card>
-  <Card title="Alerts" icon="bell">
-    Set up notifications for CCU thresholds, trend reversals, or competitor movements on any tracked game.
-  </Card>
-  <Card title="Benchmarking" icon="scale-balanced">
-    Quick-access benchmarking against genre competitors — see where your tracked games rank.
-  </Card>
-  <Card title="Update Tracking" icon="arrow-trend-up">
-    Log game updates and measure their CCU impact with before/after analysis (Builder+ plans).
-  </Card>
-  <Card title="War Room" icon="display">
-    All tracked games appear in the War Room for real-time unified monitoring (Studio plan).
-  </Card>
-</CardGroup>
-
-## What to Track
-
-<AccordionGroup>
-  <Accordion title="Your own games">
-    The most obvious use case. Track all your published games to monitor CCU trends, get forecasts, and measure the impact of your updates.
-  </Accordion>
-  <Accordion title="Direct competitors">
-    Track 3-5 games in your genre that compete for the same audience. When their CCU drops, it might be an opportunity for you. When it spikes, investigate what they did.
-  </Accordion>
-  <Accordion title="Genre leaders">
-    Track the top games in genres you're interested in. Their CCU patterns reveal genre-level trends — seasonal peaks, weekly patterns, and growth trajectories.
-  </Accordion>
-  <Accordion title="Emerging games">
-    Spot a game on the Breakout Radar? Track it to watch its trajectory. Early-stage games are the most interesting to follow because their growth patterns are still forming.
-  </Accordion>
-</AccordionGroup>
-
-## Untracking a Game
-
-To remove a game from your watchlist, go to the game detail page and click **Untrack**. Historical data is retained — if you re-track the game later, your previous CCU history will still be available.
+- **CCU history**: See detailed CCU charts for the past 7–90 days (plan-dependent)
+- **Forecasts**: ML-powered CCU predictions for tracked games
+- **Alerts**: Set up notifications for CCU thresholds or trend changes
+- **Benchmarking**: Quick-access benchmarking against genre competitors
+- **Update tracking**: Log and analyze game updates (Studio plan)
 
 ## Tracking Limits
 
@@ -75,10 +27,6 @@ To remove a game from your watchlist, go to the game detail page and click **Unt
 | Explorer | 3 |
 | Builder | 15 |
 | Studio | 50 |
-
-<Tip>
-  Prioritize tracking games you actively check. 3 well-chosen tracked games on Explorer is more valuable than 50 random games on Studio. Focus on your own games + your top 2-3 competitors.
-</Tip>
 
 ## Via API
 
@@ -91,5 +39,3 @@ curl -X POST https://rolearn.dev/api/track/2753915549 \
 curl -X DELETE https://rolearn.dev/api/track/2753915549 \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
-
-See [API Reference → Track Game](/api-reference/track-game) and [Untrack Game](/api-reference/untrack-game) for full details.
