@@ -152,12 +152,12 @@
     "og:site_name": "RoLearn Docs",
     "og:type": "website",
     "og:locale": "en_US",
-    "og:image": "https://rolearn.dev/og-default.png",
+    "og:image": "https://rolearn.dev/180x180.png",
     "twitter:card": "summary_large_image",
     "twitter:site": "@MrAshDang",
     "twitter:title": "RoLearn — Roblox Intelligence Platform",
     "twitter:description": "ML-powered Roblox analytics: trending games, CCU forecasts, genre opportunities, and revenue estimation.",
-    "twitter:image": "https://rolearn.dev/og-default.png"
+    "twitter:image": "https://rolearn.dev/180x180.png"
   },
   "seo": {
     "indexHiddenPages": false
